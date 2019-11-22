@@ -1,0 +1,23 @@
+<div class="pagination" *ngIf="count > 0">
+    <button class="page-link btn btn-light mr-1" (click)="onFirst()" [disabled]="page === 1" [ngClass]="{ disabled: page === 1 }">
+        &laquo;
+    </button>
+    <button class="page-link btn btn-light mr-1" (click)="onPrev()" [disabled]="page === 1" [ngClass]="{ disabled: page === 1 }">
+        &lsaquo;
+    </button>
+    <button
+        *ngFor="let pageNum of getPages"
+        (click)="onPage(pageNum)"
+        class="page-item btn btn-light page-link"
+        [ngClass]="{ active: pageNum === page }"
+    >
+        {{ pageNum }}
+    </button>
+
+    <button class="page-link btn btn-light ml-1" (click)="onNext()" [disabled]="lastPage" [ngClass]="{ disabled: lastPage }">
+        &rsaquo;
+    </button>
+    <button class="page-link btn btn-light ml-1" (click)="onLast()" [disabled]="lastPage" [ngClass]="{ disabled: lastPage }">
+        &raquo;
+    </button>
+</div>

@@ -1,0 +1,47 @@
+:host {
+    /deep/ {
+        .slick-next:before {
+            color: grey;
+        }
+
+        .slick-prev:before {
+            color: grey;
+        }
+
+        .card {
+            background: #f3f8ff;
+            border-radius: 0;
+        }
+    }
+
+    .testimony-photo {
+        &.people-1 {
+            background-image: url('/assets/images/people1.jpg');
+            background-position: -150px;
+        }
+
+        &.people-2 {
+            background-image: url('/assets/images/people2.jpeg');
+            background-position: 0px -70px;
+        }
+        background-size: cover;
+        position: relative;
+        height: 500px;
+        background-repeat: no-repeat;
+    }
+
+    .testimony-text {
+        display: flex;
+        align-items: center;
+        padding: 20px 20px 20px 30px;
+    }
+
+    .quote-text {
+        font-size: 20px;
+    }
+
+    .testimony-quote {
+        height: 20px;
+        width: 20px;
+    }
+}

@@ -1,0 +1,4 @@
+<div class="rating">
+    <bar-rating [(rate)]="rating" [max]="5" [theme]="'fontawesome-o'" [readOnly]="readOnly" (rateChange)="onChange($event   )"></bar-rating>
+    <label *ngIf="showText">{{ rating }}</label>
+</div>

@@ -1,0 +1,9 @@
+<form method="post" class="form-big" novalidate (ngSubmit)="onSubmit()" [formGroup]="form.formGroup">
+    <div class="form-group no-margin">
+        <div class="d-flex align-items-center justify-content-between">
+            <label for="keyword"><i class="fas fa-search search-icon"></i></label>
+            <input type="search" formControlName="keyword" id="keyword" class="form-control" [placeholder]="_placeholder" />
+        </div>
+    </div>
+    <input type="submit" style="display: none;" />
+</form>

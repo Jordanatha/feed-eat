@@ -1,0 +1,16 @@
+<kendo-combobox
+    [placeholder]="placeholder"
+    [ngClass]="nativeClass"
+    [data]="data$ | async"
+    [clearButton]="cancelable"
+    [loading]="service.loading$ | async"
+    [valueField]="'id'"
+    [textField]="'text'"
+    [filterable]="true"
+    (valueChange)="handleChange($event)"
+    [value]="value"
+    (open)="handleFilter('')"
+    [disabled]="disabled || readonly"
+    (filterChange)="handleFilter($event)"
+>
+</kendo-combobox>

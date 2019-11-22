@@ -1,0 +1,9 @@
+<ubud-dropdown [(show)]="show">
+    <button ubudDropdownToggle class="btn btn-secondary">
+        <span *ngIf="!compact">Saring</span>
+        <i class="fas fa-filter" [class.ml-2]="!compact"></i>
+    </button>
+    <div (click)="show = true; $event.stopPropagation()" class="wrapper card mt-2" [class.rtl]="rtl">
+        <ng-content></ng-content>
+    </div>
+</ubud-dropdown>

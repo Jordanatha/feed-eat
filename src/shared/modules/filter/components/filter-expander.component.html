@@ -1,0 +1,23 @@
+<div class="item">
+    <div class="header">
+        <div class="heading">
+            <span class="label">{{ label }}</span>
+            <a class="btn btn-bare p-0 text-primary" (click)="show = !show">
+                <i class="fas fa-plus" [class.active]="show"></i>
+            </a>
+        </div>
+        <div class="sub-heading">
+            <ng-container *ngIf="checkSubtitle(subtitle); else subtitleTpl">
+                <span class="sub-title">{{ subtitle || '(Belum ada data)' }}</span>
+                <a class="btn btn-bare p-0 text-primary" *ngIf="subtitle" (click)="resetClicked.emit()">Reset</a>
+            </ng-container>
+            <ng-template #subtitleTpl>
+                <span class="sub-title"><ng-content select="[filterExpanderSubtitle]"></ng-content></span>
+                <a class="btn btn-bare p-0 text-primary" *ngIf="subtitleDirective.tpl" (click)="resetClicked.emit()">Reset</a>
+            </ng-template>
+        </div>
+    </div>
+    <div class="body" *ngIf="show">
+        <ng-content></ng-content>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+:host {
+    .otp-form {
+        margin: 0 -10px;
+
+        div {
+            padding: 0 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .otp-form {
+            margin: 0 -5px;
+
+            div {
+                padding: 0 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+@import '../../../../scss/variables';
+@import '~@ubud/bootstrap-theme/main';
+@import '~@progress/kendo-theme-bootstrap/scss/all';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/icons';
+@import '~@fortawesome/fontawesome-free/scss/fa-brands';
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/components';
+@import 'styles/layouts';
+@import 'styles/utils';
+@import 'styles/feedeat';
+@import 'styles/general';
+
+// HTML Reset
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 0.9rem;
+    background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 0 !important;
+}
+// end of Reset
+
+// setup Font
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif !important;
+    color: $grey-dark;
+    letter-spacing: 0.25px;
+}
+p {
+    color: $grey-base;
+    letter-spacing: 0.25px;
+}
+// end of Font
+
+a {
+    &:not([href]):not([tabindex]):hover,
+    &:not([href]):not([tabindex]):focus,
+    &:hover {
+        text-decoration: underline;
+    }
+
+    cursor: pointer;
+}
+
+p {
+    color: $dark;
+}
+
+.text-muted {
+    color: $text-muted !important;
+}
+
+.col-tablet-responsive-1 {
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @include make-col(8);
+    }
+}
+
+.col-tablet-responsive-2 {
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @include make-col(4);
+    }
+}
+
+.document img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}

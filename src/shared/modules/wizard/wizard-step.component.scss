@@ -1,0 +1,58 @@
+@import '../../../../scss/variables';
+
+:host {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+
+    /deep/ {
+        .wizard-step-item {
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            &.step-done,
+            &.step-active {
+                .wizard-step-number {
+                    background: white;
+                    color: $primary;
+                    border-color: $primary;
+                }
+
+                .wizard-step-label {
+                    color: $primary;
+                }
+            }
+
+            .wizard-step-number {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+                border-radius: 100%;
+                margin-right: 0.8rem;
+                position: relative;
+                color: #959595;
+                border: 1px solid #959595;
+
+                > .wizard-step-number-value {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    font-weight: 500;
+                }
+            }
+
+            .wizard-step-label {
+                flex: 1;
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 500;
+                color: #959595;
+            }
+        }
+    }
+}

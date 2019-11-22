@@ -1,0 +1,97 @@
+<kendo-dialog *ngIf="service.open$ | async" title="Jabatan KBJI" width="550" height="600">
+    <div class="k-form">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="search-box">
+                <form method="post" novalidate (ngSubmit)="search(keyword)">
+                    <search-input nativeClass="form-control"
+                                  placeholder="Cari berdasarkan kode dan nama"
+                                  width="280"
+                                  [(ngModel)]="keyword"
+                                  [ngModelOptions]="{ standalone: true }"
+                                  (canceled)="keyword = ''; search(keyword)"
+                    ></search-input>
+                </form>
+            </div>
+            <div class="filter-box">
+                <filter-dropdown [rtl]="true">
+                    <filter-expander label="Golongan Pokok"
+                                     [subtitle]="(principal$ | async)?.name"
+                                     (resetClicked)="principal = null"
+                    >
+                        <position-principal-input [ngModel]="(principal$ | async)?.id"
+                                                  [ngModelOptions]="{ standalone: true }"
+                                                  (changed)="principal = $event; bindFilter();"
+                                                  nativeClass="form-control"
+                        ></position-principal-input>
+                    </filter-expander>
+                    <filter-expander label="Sub Golongan Pokok"
+                                     [subtitle]="(subPrincipal$ | async)?.name"
+                                     (resetClicked)="subPrincipal = null"
+                    >
+                        <position-sub-principal-input [ngModel]="(subPrincipal$ | async)?.id"
+                                                      [principal]="(principal$ | async)?.id"
+                                                      [readonly]="!(principal$ | async)"
+                                                      [ngModelOptions]="{ standalone: true }"
+                                                      (changed)="subPrincipal = $event; bindFilter();"
+                                                      nativeClass="form-control"
+                        ></position-sub-principal-input>
+                    </filter-expander>
+                    <filter-expander label="Golongan"
+                                     [subtitle]="(group$ | async)?.name"
+                                     (resetClicked)="group = null"
+                    >
+                        <position-group-input [ngModel]="(group$ | async)?.id"
+                                              [subPrincipal]="(subPrincipal$ | async)?.id"
+                                              [readonly]="!(subPrincipal$ | async)"
+                                              [ngModelOptions]="{ standalone: true }"
+                                              (changed)="group = $event; bindFilter();"
+                                              nativeClass="form-control"
+                        ></position-group-input>
+                    </filter-expander>
+                    <filter-expander label="Sub Golongan"
+                                     [subtitle]="(category$ | async)?.name"
+                                     (resetClicked)="category = null"
+                    >
+                        <position-category-input [ngModel]="(category$ | async)?.id"
+                                                 [group]="(group$ | async)?.id"
+                                                 [readonly]="!(group$ | async)"
+                                                 [ngModelOptions]="{ standalone: true }"
+                                                 (changed)="category = $event; bindFilter();"
+                                                 nativeClass="form-control"
+                        ></position-category-input>
+                    </filter-expander>
+                </filter-dropdown>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <kendo-grid [groupable]="{ enabled: false }"
+                            [data]="collection$ | async"
+                            class="grid-no-border"
+                            [loading]="loading$ | async"
+                >
+                    <kendo-grid-column title="Kode" width="100">
+                        <ng-template kendoGridCellTemplate let-item>
+                            <a (click)="select(item)">{{ item.code }}</a>
+                        </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column title="Nama" width="300" field="name"></kendo-grid-column>
+                    <kendo-grid-column title="" field="positionCategory.id">
+                        <ng-template kendoGridGroupHeaderTemplate let-item>
+                            <ng-container *ngIf="item.items.length > 0 else noItemsTpl">
+                                {{ item.items[0].positionCategory.name }}
+                            </ng-container>
+                            <ng-template #noItemsTpl>
+                                {{ item.value }}
+                            </ng-template>
+                        </ng-template>
+                        <ng-template kendoGridCellTemplate></ng-template>
+                    </kendo-grid-column>
+                </kendo-grid>
+            </div>
+        </div>
+    </div>
+    <kendo-dialog-actions>
+        <a (click)="service.toggle(false)" class="btn btn-bare ml-2">Tutup</a>
+    </kendo-dialog-actions>
+</kendo-dialog>

@@ -1,0 +1,23 @@
+:host {
+    .why-us-image {
+        height: 400px;
+        width: 400px;
+    }
+
+    .why-us-text-section {
+        display: flex;
+        align-items: center;
+
+        &.left {
+            text-align: left !important;
+        }
+
+        &.right {
+            text-align: right !important;
+        }
+    }
+
+    .why-us-description {
+        margin-top: 10px;
+    }
+}

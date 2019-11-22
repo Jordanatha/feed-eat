@@ -1,0 +1,50 @@
+@import '../../../../../scss/variables';
+
+:host {
+    .rating {
+        margin: 1rem 0 0.8rem;
+        display: flex;
+        align-items: center;
+
+        ::ng-deep {
+            .br {
+                margin: 0 !important;
+
+                &.br-fontawesome-o {
+                    .br-unit {
+                        align-items: center;
+                    }
+
+                    .br-unit {
+                        font: normal normal normal 14px/1 FontAwesome;
+                        margin-right: 2px;
+
+                        &:after {
+                            content: '\f005';
+                            color: #e4e4e4;
+                            font-family: 'Font Awesome 5 Free';
+                        }
+                    }
+
+                    .br-selected:after,
+                    .br-active:after,
+                    .br-fraction:after {
+                        color: $yellow;
+                        font-weight: 900;
+                    }
+
+                    .br-fraction:after {
+                        content: '\f5c0';
+                    }
+                }
+            }
+        }
+
+        label {
+            margin-left: 5px;
+            margin-bottom: 0;
+            line-height: 0;
+            color: #000;
+        }
+    }
+}

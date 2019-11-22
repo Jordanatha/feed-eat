@@ -1,0 +1,77 @@
+<navbar>
+    <a routerLink="/" href="/" class="navbar-brand">
+        <img alt="logo" src="assets/images/company-logo.png" title="Feedeat" class="cover">
+    </a>
+
+    <li class="nav-item" navItem>
+        <a [routerLinkActiveOptions]="{exact: true}" class="btn nav-link" routerLink="/"
+           routerLinkActive="active">Beranda</a>
+    </li>
+
+    <li class="nav-item ml-3" navItem>
+        <a class="btn nav-link" routerLink="/vacancies"
+           routerLinkActive="btn btn-success btn-md">Lowongan</a>
+    </li>
+
+    <li class="nav-item ml-3" navItem>
+        <a class="btn nav-link" routerLink="/companies" routerLinkActive="btn btn-success btn-md">Perusahaan</a>
+    </li>
+
+    <ng-container *ngIf="(user$ | async) else unAuthenticatedTpl" navItem>
+        <li class="nav-item ml-3" navItem>
+            User
+        </li>
+    </ng-container>
+
+    <ng-template #unAuthenticatedTpl>
+        <li class="nav-item ml-3" navItem>
+            <a class="btn nav-link" routerLink="/auth/register" routerLinkActive="btn btn-success btn-md">Daftar</a>
+        </li>
+        <li class="nav-item ml-3" navItem>
+            <a class="btn nav-link" routerLink="/auth/login" routerLinkActive="btn btn-success btn-md">Masuk</a>
+        </li>
+    </ng-template>
+</navbar>
+
+<router-outlet></router-outlet>
+
+<footer>
+    <div class="container">
+        <div
+            class="d-flex text-center text-lg-left align-items-center align-items-lg-end justify-content-between flex-column flex-lg-row">
+            <div class="site-info">
+                <a routerLink="/">
+                    <img alt="logo" class="logo-footer" src="assets/images/company-logo.png"/>
+                </a>
+                <p class="text-success">Prasetya Mulya Business School <br>Tangerang BSD 12750, Indonesia</p>
+            </div>
+            <div class="d-flex flex-column align-items-center align-items-lg-end mt-4">
+                <div class="social-icon">
+                    <ul>
+                        <li id="facebook-1">
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li id="twitter-1">
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li id="instagram-1">
+                            <a href="https://instagram.com" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        </li>
+                        <li id="youtube-1">
+                            <a href="https://www.youtube.com" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <a>Tentang Feedeat</a>
+                    <a>Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row text-center text-lg-left">
+            Feedeat Indonesia &copy; 2019 • Hak Cipta Dilindungi Undang-Undang.
+        </div>
+    </div>
+</footer>

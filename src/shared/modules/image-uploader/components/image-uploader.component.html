@@ -1,0 +1,7 @@
+<div class="wrapper" style="cursor: pointer;" (click)="fileInputTpl.click()">
+    <image-async [path]="((tempPath$ | async) || (path$ | async)) || path" nativeClass="cover rounded-5 w-100"></image-async>
+    <input type="file" class="d-none" (change)="change($event)" #fileInputTpl />
+    <div class="overlay">
+        <div class="content"><i class="fas fa-upload"></i></div>
+    </div>
+</div>

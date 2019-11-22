@@ -1,0 +1,16 @@
+:host {
+    .form-control {
+        background: none !important;
+        outline: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .search-icon {
+        color: #4b5259;
+    }
+
+    label {
+        padding: 0;
+        margin: 0;
+    }
+}

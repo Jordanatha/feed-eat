@@ -1,0 +1,75 @@
+<div class="d-flex align-items-center justify-content-between otp-form">
+    <div>
+        <input
+            minlength="1"
+            pattern="\d{1,1}"
+            type="tel"
+            (input)="updateValue(0, $event)"
+            (keydown)="deleteValue(0, $event)"
+            autofocus
+            #firstInput
+            [readonly]="disabled"
+            class="form-control text-center"
+        />
+    </div>
+    <div>
+        <input
+            minlength="1"
+            pattern="\d{1,1}"
+            type="tel"
+            (input)="updateValue(1, $event)"
+            (keydown)="deleteValue(1, $event)"
+            #secondInput
+            [readonly]="disabled"
+            class="form-control text-center"
+        />
+    </div>
+    <div>
+        <input
+            minlength="1"
+            pattern="\d{1,1}"
+            type="tel"
+            (input)="updateValue(2, $event)"
+            (keydown)="deleteValue(2, $event)"
+            #thirdInput
+            [readonly]="disabled"
+            class="form-control text-center"
+        />
+    </div>
+    <div>
+        <input
+            minlength="1"
+            pattern="\d{1,1}"
+            type="tel"
+            (input)="updateValue(3, $event)"
+            (keydown)="deleteValue(3, $event)"
+            #fourthInput
+            [readonly]="disabled"
+            class="form-control text-center"
+        />
+    </div>
+    <div>
+        <input
+            minlength="1"
+            pattern="\d{1,1}"
+            type="tel"
+            (input)="updateValue(4, $event)"
+            (keydown)="deleteValue(4, $event)"
+            #fifthInput
+            [readonly]="disabled"
+            class="form-control text-center"
+        />
+    </div>
+    <div>
+        <input
+            minlength="1"
+            pattern="\d{1,1}"
+            type="tel"
+            (input)="updateValue(5, $event)"
+            (keydown)="deleteValue(5, $event)"
+            #sixthInput
+            [readonly]="disabled"
+            class="form-control text-center"
+        />
+    </div>
+</div>

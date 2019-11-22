@@ -1,0 +1,217 @@
+.banner {
+    .form-control:not(.k-widget) {
+        background: $white;
+        padding: 13px 16px;
+        line-height: 1rem;
+    }
+
+    .k-combobox {
+        .k-input {
+            height: 100%;
+        }
+
+        .k-select {
+            background: white !important;
+            border: none;
+            color: theme-color('dark');
+            width: 2.640625rem;
+
+            &:hover {
+                background: $gray-200 !important;
+            }
+        }
+    }
+
+    .btn {
+        height: 44px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: 500;
+
+        &.btn-light {
+            color: $dark;
+        }
+    }
+
+    /*button.btn {
+        width: 44px;
+        font-size: 18px;
+    }*/
+}
+
+.form-control {
+    font-size: 1rem;
+}
+
+.form-group-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.form-group {
+    label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 8px;
+        font-size: 14px;
+
+        &.label-content {
+            font-weight: 600;
+            color: $text-muted;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+    }
+
+    .input-group-append,
+    .input-group-prepend {
+        > .input-group-text {
+            background-color: $input-bg-color;
+        }
+
+        > .form-control {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    .input-group-prepend {
+        border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
+    }
+}
+
+.form-control,
+.k-autocomplete.form-control {
+    background: $input-bg-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: $input-bg-color;
+    }
+
+    &:disabled {
+        background: $input-bg-color-disabled !important;
+    }
+
+    &[readonly] {
+        background: $input-bg-color !important;
+    }
+}
+
+.k-maskedtextbox.form-control .k-textbox {
+    height: calc(2.25rem + 0.999px) !important;
+    border: 0 !important;
+}
+
+.k-combobox.no-arrow {
+    .k-select {
+        background: none !important;
+        border: none !important;
+
+        .k-i-arrow-s {
+            display: none !important;
+        }
+    }
+
+    .k-input {
+        padding-right: 30px;
+    }
+
+    .k-dropdown-wrap {
+        .k-i-close {
+            right: 10px;
+        }
+    }
+}
+
+.k-autocomplete,
+.k-combobox .k-dropdown-wrap,
+.k-datepicker .k-picker-wrap,
+.k-timepicker .k-picker-wrap,
+.k-datetimepicker .k-picker-wrap,
+.k-dateinput .k-dateinput-wrap,
+.k-textbox,
+.k-input.k-textbox,
+.k-multiselect-wrap,
+.k-numerictextbox .k-numeric-wrap,
+.k-dropdown .k-dropdown-wrap {
+    background-color: transparent;
+}
+
+.k-combobox .k-select,
+.k-datepicker .k-select,
+.k-timepicker .k-select {
+    background-color: transparent !important;
+    border: none !important;
+    color: $gray-600;
+}
+
+.k-autocomplete,
+.k-dateinput-wrap,
+.k-dropdown-wrap,
+.k-picker-wrap,
+.k-multiselect-wrap,
+.k-numeric-wrap {
+    border-width: 0;
+}
+
+.k-state-focused {
+    .k-multiselect-wrap {
+        background-color: transparent;
+    }
+}
+
+.k-multiselect-wrap:hover {
+    background-color: transparent;
+}
+
+.k-autocomplete .k-input,
+.k-dateinput-wrap .k-input,
+.k-dropdown-wrap .k-input,
+.k-picker-wrap .k-input,
+.k-multiselect-wrap .k-input,
+.k-numeric-wrap .k-input {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+}
+
+.k-numeric-wrap .k-input,
+.k-autocomplete .k-input {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.input-group-prepend {
+    .form-control {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+.k-radio-label {
+    &:before {
+        border-radius: 50%;
+        border-color: rgba(48, 54, 60, 0.15);
+        background-color: rgba(48, 54, 60, 0.15);
+    }
+}
+
+.k-checkbox-label {
+    &:before {
+        border-color: rgba(48, 54, 60, 0.15);
+        background-color: rgba(48, 54, 60, 0.15);
+    }
+}

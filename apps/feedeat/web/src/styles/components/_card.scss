@@ -1,0 +1,22 @@
+.card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    border-color: transparent;
+    border-width: 0;
+
+    > .card-thumbnail {
+    }
+
+    > .card-header {
+        background-color: #fff;
+    }
+
+    > .card-footer {
+        border-top: 2px solid rgb(235, 236, 240);
+        background-color: $white;
+    }
+}

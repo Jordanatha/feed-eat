@@ -1,0 +1,40 @@
+:host {
+    /deep/ .pagination {
+        .page {
+            &-item {
+                margin: 0 2px;
+
+                &:first-child {
+                    margin-left: 0;
+                    margin-right: 8px;
+                }
+
+                &:last-child {
+                    margin-left: 8px;
+                    margin-right: 0;
+                }
+
+                &.disabled {
+                    &.page-link {
+                        background-color: #f2f2f2 !important;
+                    }
+                }
+
+                &.active {
+                    &.page-link {
+                        background-color: #154069 !important;
+                        color: #f2f2f2 !important;
+                        border-color: #154069 !important;
+                    }
+                }
+            }
+
+            &-link {
+                background-color: rgba(21, 64, 105, 0.15);
+                border-radius: 5px !important;
+                font-weight: 600;
+                color: #154069;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.font-weight-500 {
+    font-weight: 500 !important;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 100px;
+    border: 1px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.h-80px {
+    height: 80px !important;
+}
+
+.vertical-separator {
+    background: #b4b4b4;
+    width: 1px;
+}
+
+.text-over {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

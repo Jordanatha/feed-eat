@@ -1,0 +1,1 @@
+<span [class]="'text-' + color"><span [class.expandUp]="isCopied$ | async" class="copied">Copied!</span> <ng-content></ng-content> <i class="fas fa-copy copy-icon" [class.copy-icon-big]="big" (cbOnSuccess)="onCopied()" ngxClipboard [cbContent]="content"></i></span>

@@ -1,0 +1,32 @@
+<svg
+    [attr.height]="radius * 2"
+    [attr.width]="radius * 2"
+>
+    <circle
+        class="circle--backdrop"
+        fill="transparent"
+        [attr.stroke-width]="stroke"
+        [attr.r]="normalizedRadius"
+        [attr.cx]="radius"
+        [attr.cy]="radius"></circle>
+    <circle
+        class="circle"
+        fill="transparent"
+        [attr.stroke]="strokeColor"
+        [attr.stroke-linecap]="'round'"
+        [attr.stroke-dasharray]="circumference + ' ' + circumference"
+        [attr.stroke-dashoffset]="strokeDashoffset"
+        [attr.stroke-width]="stroke"
+        [attr.r]="normalizedRadius"
+        [attr.cx]="radius"
+        [attr.cy]="radius"></circle>
+    <text
+        x="50%"
+        y="50%"
+        text-anchor="middle"
+        alignment-baseline="middle"
+        [attr.font-size]="textSize"
+        [attr.fill]="textColor">
+        {{ progress || 0 }}%
+    </text>
+</svg>

@@ -1,0 +1,17 @@
+<div class="input-group">
+    <input
+        [class]="nativeClass"
+        id="keyword"
+        (input)="writeValue($event.target.value)"
+        [placeholder]="placeholder"
+        [style.width]="width + 'px'"
+        type="text"
+        [value]="value$ | async"
+    />
+    <div class="clear-button-wrapper" (click)="writeValue(''); canceled.emit()" *ngIf="(value$ | async)">
+        <a class="clear-button"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="input-group-append input-group-lg">
+        <button class="btn btn-input" type="submit"><i class="fas fa-search"></i></button>
+    </div>
+</div>

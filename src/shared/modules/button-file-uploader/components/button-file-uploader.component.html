@@ -1,0 +1,15 @@
+<button (click)="openFile()" class="btn btn-secondary" [class.text-success]="imageFile" [ngClass]="nativeClass" type="button">
+    <ng-container *ngIf="!imageFile else checkIconTpl">
+        <i class="fas fa-upload mr-1"></i>
+        Pilih File
+    </ng-container>
+    <ng-template #checkIconTpl>
+        <i class="fas fa-check-circle"></i>
+    </ng-template>
+</button>
+<ng-container *ngIf="imageFile">
+    <div *ngIf="!hideFile">
+        <small class="text-black-50 text-muted" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ imageFile.name }} </small>
+    </div>
+</ng-container>
+<input #imageFileInput (change)="change($event)" accept="image/*" class="k-textbox d-none" type="file" [accept]="accept" />

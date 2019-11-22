@@ -1,0 +1,140 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "apps",
+    "projects": {
+        "feedeat-web": {
+            "root": "apps/feedeat/web",
+            "sourceRoot": "apps/feedeat/web/src",
+            "projectType": "application",
+            "prefix": "feedeat",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "inlineTemplate": true,
+                    "inlineStyle": true,
+                    "styleext": "scss",
+                    "spec": false
+                },
+                "@schematics/angular:class": {
+                    "spec": false
+                },
+                "@schematics/angular:directive": {
+                    "spec": false
+                },
+                "@schematics/angular:guard": {
+                    "spec": false
+                },
+                "@schematics/angular:module": {
+                    "spec": false
+                },
+                "@schematics/angular:pipe": {
+                    "spec": false
+                },
+                "@schematics/angular:service": {
+                    "spec": false
+                }
+            },
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/feedeat/web",
+                        "index": "apps/feedeat/web/src/index.html",
+                        "main": "apps/feedeat/web/src/main.ts",
+                        "polyfills": "apps/feedeat/web/src/polyfills.ts",
+                        "tsConfig": "apps/feedeat/web/tsconfig.app.json",
+                        "assets": ["apps/feedeat/web/src/favicon.ico", "apps/feedeat/web/src/assets"],
+                        "styles": [
+                            "apps/feedeat/web/src/styles.scss",
+                            "node_modules/slick-carousel/slick/slick.scss",
+                            "node_modules/slick-carousel/slick/slick-theme.scss"
+                        ],
+                        "scripts": ["node_modules/jquery/dist/jquery.min.js", "node_modules/slick-carousel/slick/slick.min.js"]
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/feedeat/web/src/environments/environment.ts",
+                                    "with": "apps/feedeat/web/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "serviceWorker": true
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "feedeat-web:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "feedeat-web:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "feedeat-web:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "apps/feedeat/web/src/test.ts",
+                        "polyfills": "apps/feedeat/web/src/polyfills.ts",
+                        "tsConfig": "apps/feedeat/web/tsconfig.spec.json",
+                        "karmaConfig": "apps/feedeat/web/karma.conf.js",
+                        "styles": ["apps/feedeat/web/src/styles.scss"],
+                        "scripts": [],
+                        "assets": ["apps/feedeat/web/src/favicon.ico", "apps/feedeat/web/src/assets"]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": ["apps/feedeat/web/tsconfig.app.json", "apps/feedeat/web/tsconfig.spec.json"],
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
+        },
+        "feedeat-e2e": {
+            "root": "apps/feedeat-e2e/",
+            "projectType": "application",
+            "architect": {
+                "e2e": {
+                    "builder": "@angular-devkit/build-angular:protractor",
+                    "options": {
+                        "protractorConfig": "apps/feedeat-e2e/protractor.conf.js",
+                        "devServerTarget": "feedeat:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "feedeat:serve:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": "apps/feedeat-e2e/tsconfig.e2e.json",
+                        "exclude": ["**/node_modules/**"]
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "feedeat-web"
+}

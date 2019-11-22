@@ -1,0 +1,18 @@
+<card>
+    <card-header>
+        <ng-content select=".card-header"></ng-content>
+        <ng-content select="[dataGridHeader]"></ng-content>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 col-lg-6">
+                <ng-content select="data-grid-search-container"></ng-content>
+                <ng-content select="[dataGridSearch]"></ng-content>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 data-grid-controls">
+                <ng-content select="[dataGridAction]"></ng-content>
+                <ng-content select="[dataGridOption]"></ng-content>
+            </div>
+        </div>
+    </card-header>
+    <card-content> <ng-content select="[dataGridContent]"></ng-content> </card-content>
+    <card-footer> <ng-content select="[dataGridFooter]"></ng-content> </card-footer>
+</card>

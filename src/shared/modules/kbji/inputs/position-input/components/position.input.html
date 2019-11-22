@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <input type="text" [ngClass]="nativeClass"
+           readonly
+           (click)="toggle(true)"
+           [ngModel]="(value$ | async)?.name"
+           [ngModelOptions]="{ standalone: true }"
+    />
+
+    <i class="fas fa-chevron-right icon"></i>
+</div>

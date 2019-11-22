@@ -1,0 +1,5 @@
+<div class="popup-sidebar-overlay" (click)="closePopupSidebar.emit()"></div>
+
+<div class="popup-sidebar-container menu-container" [style.width]="width + 'px'">
+    <ng-content select="[popupSidebarContent]"></ng-content>
+</div>

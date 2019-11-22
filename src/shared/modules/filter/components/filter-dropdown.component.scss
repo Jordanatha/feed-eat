@@ -1,0 +1,27 @@
+:host {
+    ubud-dropdown {
+        position: relative;
+
+        .wrapper {
+            position: absolute;
+            top: 100%;
+            z-index: 99999;
+            width: 256px;
+            overflow: inherit !important;
+
+            &:not(.rtl) {
+                left: 0;
+            }
+
+            &.rtl {
+                right: 0;
+            }
+
+            kendo-popup {
+                width: 100% !important;
+                position: absolute;
+                z-index: 9999999;
+            }
+        }
+    }
+}

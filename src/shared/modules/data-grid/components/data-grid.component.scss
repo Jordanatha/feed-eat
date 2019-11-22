@@ -1,0 +1,19 @@
+:host {
+    /deep/ .card-header,
+    [dataGridHeader] {
+        background: #f5f5f5 !important;
+        padding: 10px 20px !important;
+    }
+
+    .data-grid-controls {
+        text-align: right;
+
+        @media (max-width: 768px) {
+            text-align: left;
+        }
+    }
+
+    /deep/ [dataGridFooter] {
+        padding: 20px;
+    }
+}

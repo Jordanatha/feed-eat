@@ -1,0 +1,65 @@
+.feedeat-tab-stripper {
+    position: relative;
+
+    .feedeat-tab-line {
+        background-color: rgb(235, 236, 240);
+        bottom: 0;
+        content: '';
+        height: 2px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        width: inherit;
+        margin: 0;
+    }
+
+    > ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        font-weight: 500;
+        list-style-type: none;
+
+        li {
+            padding: 0 8px;
+            color: rgb(66, 82, 110);
+            font-size: 14px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            > a {
+                padding: 6px 0;
+                color: rgb(66, 82, 110);
+                cursor: pointer;
+                line-height: 1.8;
+                position: relative;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin: 0px;
+                overflow: hidden;
+                display: block;
+
+                &:hover {
+                    text-decoration: none !important;
+                }
+            }
+
+            &.active {
+                > a {
+                    color: theme-color('primary');
+                    border-bottom: 2px solid theme-color('primary');
+
+                    .badge {
+                        @extend .badge-primary;
+                    }
+                }
+            }
+        }
+    }
+}

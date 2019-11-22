@@ -1,0 +1,71 @@
+:host {
+    span {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+
+        .copy-icon {
+            position: absolute;
+            right: -17px;
+            top: 2px;
+
+            &.copy-icon-big {
+                right: -35px;
+            }
+        }
+
+        .copied {
+            position: absolute;
+            top: -13px;
+            font-weight: 500;
+            font-size: 12px;
+            width: calc(100% + 17px);
+            display: none;
+            text-align: center;
+        }
+    }
+
+    .expandUp {
+        animation-name: expandUp;
+        -webkit-animation-name: expandUp;
+        display: block !important;
+
+        animation-duration: 0.4s;
+        -webkit-animation-duration: 0.4s;
+
+        animation-timing-function: ease;
+        -webkit-animation-timing-function: ease;
+
+        visibility: visible !important;
+    }
+
+    @keyframes expandUp {
+        0% {
+            transform: translateY(100%) scale(0.6) scaleY(0.5);
+        }
+        60% {
+            transform: translateY(-7%) scaleY(1.12);
+        }
+        75% {
+            transform: translateY(3%);
+        }
+        100% {
+            transform: translateY(0%) scale(1) scaleY(1);
+        }
+    }
+
+    @-webkit-keyframes expandUp {
+        0% {
+            -webkit-transform: translateY(100%) scale(0.6) scaleY(0.5);
+        }
+        60% {
+            -webkit-transform: translateY(-7%) scaleY(1.12);
+        }
+        75% {
+            -webkit-transform: translateY(3%);
+        }
+        100% {
+            -webkit-transform: translateY(0%) scale(1) scaleY(1);
+        }
+    }
+}

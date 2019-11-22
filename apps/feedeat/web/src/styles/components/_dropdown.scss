@@ -1,0 +1,32 @@
+ubud-sidebar-layout {
+    .navbar {
+        .k-dropdown {
+            .k-dropdown-wrap {
+                border: none;
+                font-weight: 500;
+                color: $gray-600;
+            }
+
+            .k-state-focused {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.k-list .k-item:focus,
+.k-list .k-item.k-state-focused,
+.k-list .k-item.k-state-selected {
+    box-shadow: none !important;
+    color: $gray-700;
+}
+
+.k-list .k-item {
+    line-height: 26px;
+    font-weight: 500;
+    color: $gray-600;
+}
+
+kendo-popup {
+    z-index: 999999999999999 !important;
+}

@@ -1,0 +1,58 @@
+.k-calendar.k-calendar-range > .k-dropdown-button.k-widget.k-button,
+.k-dropdown-button.k-bare.k-widget > .k-button,
+.k-dropdown-button.k-bare.k-widget {
+    background: 0 0 !important;
+}
+
+.k-button {
+    border: none;
+}
+
+.k-button {
+    font-weight: 500;
+}
+
+kendo-dialog-actions {
+    .btn-bare {
+        color: $gray-600 !important;
+    }
+}
+
+.btn {
+    font-weight: 500;
+
+    &.btn-input {
+        background-color: $input-bg-color;
+    }
+
+    &.btn-bare {
+        background-color: transparent !important;
+        color: $gray-700;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &.btn-primary-light {
+        background-color: #2d5378;
+
+        &:hover {
+            background-color: rgba(250, 250, 250, 0.3);
+        }
+    }
+
+    &.btn-outline-secondary {
+        color: $gray-600;
+    }
+
+    &.btn-info {
+        background-color: theme-color('info') !important;
+        color: $white;
+
+        &:hover {
+            background-color: darken(theme-color('info'), 10%) !important;
+            border-color: darken(theme-color('info'), 10%) !important;
+        }
+    }
+}

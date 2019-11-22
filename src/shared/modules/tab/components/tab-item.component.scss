@@ -1,0 +1,30 @@
+@import '../../../../../scss/variables';
+
+:host {
+    display: block;
+    width: 100%;
+    clear: both;
+
+    /deep/ {
+        .tab-item {
+            &:first-child {
+                margin-left: 0;
+            }
+
+            padding-top: 22px;
+            padding-bottom: 22px;
+            font-weight: 500;
+            float: left;
+            margin-left: 32px;
+            color: $gray-600 !important;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+
+            &.tab-active {
+                color: theme-color('primary') !important;
+                border-bottom-color: theme-color('primary');
+            }
+        }
+    }
+}

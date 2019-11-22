@@ -1,0 +1,28 @@
+<div class="upload p-0 upload-border">
+    <div class="text-center p-3" style="top: 0; width: 100%">
+        <ng-container *ngIf="!imageFile">
+            <i class="fas fa-cloud-upload-alt text-primary d-block display-1 w-auto"></i>
+            <div class="text-muted mt-2" style="white-space: normal !important;">
+                Pilih file yang akan diupload dengan menekan tombol dibawah.
+            </div>
+        </ng-container>
+        <ng-container *ngIf="imageFile">
+            <div class="text-primary text-center mt-5">
+                <label
+                >Name: <span class="text-black-50">{{ imageFile.name }}</span></label
+                >
+                <label
+                >Type: <span class="text-black-50">{{ imageFile.type }} </span></label
+                >
+                <label
+                >Size: <span class="text-black-50">{{ imageFile.size / 1000 | number: '0.0-0' }} KB</span></label
+                >
+            </div>
+        </ng-container>
+
+        <button (click)="openFile()" class="btn btn-primary mt-4 d-block mx-auto" type="button">
+            Pilih file...
+        </button>
+        <input #imageFileInput (change)="change($event)" accept="image/*" class="k-textbox d-none" type="file" [accept]="accept" />
+    </div>
+</div>
