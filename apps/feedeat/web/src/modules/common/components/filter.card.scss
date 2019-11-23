@@ -1,0 +1,27 @@
+@import '../../../../../../../scss/variables';
+
+:host {
+    /deep/ .card {
+        width: 300px;
+        border-radius: 0;
+        .card-header {
+            font-weight: 500;
+            font-size: 20px;
+            padding: 15px;
+            background-color: #f3f8ff;
+            border: none;
+        }
+    }
+
+    .sorting-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .sorting-icon {
+        border: 2px solid grey;
+        padding: 5px;
+        border-radius: 30%;
+        font-size: 20px;
+    }
+}

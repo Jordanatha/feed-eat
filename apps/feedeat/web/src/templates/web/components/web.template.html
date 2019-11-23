@@ -9,12 +9,12 @@
     </li>
 
     <li class="nav-item ml-3" navItem>
-        <a class="btn nav-link" routerLink="/vacancies"
-           routerLinkActive="btn btn-success btn-md">Lowongan</a>
+        <a class="btn nav-link" routerLink="/products"
+           routerLinkActive="active">Menu</a>
     </li>
 
     <li class="nav-item ml-3" navItem>
-        <a class="btn nav-link" routerLink="/companies" routerLinkActive="btn btn-success btn-md">Perusahaan</a>
+        <a class="btn nav-link" routerLink="/companies" routerLinkActive="active">Perusahaan</a>
     </li>
 
     <ng-container *ngIf="(user$ | async) else unAuthenticatedTpl" navItem>

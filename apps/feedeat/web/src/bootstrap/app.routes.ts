@@ -12,6 +12,11 @@ const routes: Routes = [
                 loadChildren: () =>
                     import('@feedeat/web/src/modules/home/views/public/home-public.module').then(m => m.FeedeatHomePublicModule),
             },
+            {
+                path: 'products',
+                loadChildren: () =>
+                    import('@feedeat/web/src/modules/product/views/public/product-public.module').then(m => m.FeedeatProductPublicModule),
+            },
         ],
     },
 ];
