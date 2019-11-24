@@ -4,9 +4,60 @@
     </div>
     <div class="card-body text-center">
         <div class="sorting-item">
-            <div class="sorting-icon">
-                <i class="fas fa-thumbs-up"></i>
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <button
+                        class="btn btn-outline-secondary w-100 {{ selectedSortIndex === 'recommendation' ? 'active' : '' }}"
+                        (click)="setSelectedSortIndex('recommendation')"
+                    >
+                        Rekomendasi
+                    </button>
+                </div>
+                <div class="col-12 mb-3">
+                    <button
+                        class="btn btn-outline-secondary w-100 {{ selectedSortIndex === 'rating' ? 'active' : '' }}"
+                        (click)="setSelectedSortIndex('rating')"
+                    >
+                        Rating Tertinggi
+                    </button>
+                </div>
+                <div class="col-12 mb-3">
+                    <button
+                        class="btn btn-outline-secondary w-100 {{ selectedSortIndex === 'highestPrice' ? 'active' : '' }}"
+                        (click)="setSelectedSortIndex('highestPrice')"
+                    >
+                        Harga Tertinggi
+                    </button>
+                </div>
+                <div class="col-12 mb-3">
+                    <button
+                        class="btn btn-outline-secondary w-100 {{ selectedSortIndex === 'lowestPrice' ? 'active' : '' }}"
+                        (click)="setSelectedSortIndex('lowestPrice')"
+                    >
+                        Harga Terendah
+                    </button>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Filter
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label>Harga</label>
+            <div class="d-flex align-items-center">
+                <input type="text" class="form-control"/>
+                <hr class="line"/>
+                <input type="text" class="form-control"/>
+            </div>
+        </div>
+        <div class="w-100 text-right">
+            <button class="btn btn-sm btn-danger mr-2">Reset</button>
+            <button class="btn btn-sm btn-primary">Submit</button>
         </div>
     </div>
 </div>

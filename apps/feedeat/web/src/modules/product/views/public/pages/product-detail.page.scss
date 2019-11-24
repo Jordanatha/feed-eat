@@ -1,0 +1,41 @@
+:host {
+    .page-container {
+        margin-top: 100px;
+        margin-bottom: 300px;
+    }
+
+    .field-label {
+        color: black !important;
+        font-weight: 600 !important;
+    }
+
+    .package-image {
+        width: 100%;
+        height: auto;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .detail-section {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .merchant-link {
+        font-weight: bold !important;
+    }
+
+    /deep/ .card {
+        border: none;
+        box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .menu-schedule {
+        margin-top: 20px;
+    }
+
+    .separator-line {
+        border-width: 3px;
+        color: grey;
+    }
+}

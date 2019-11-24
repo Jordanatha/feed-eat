@@ -1,4 +1,56 @@
 <div class="container page-container">
-    <feedeat-filter-card></feedeat-filter-card>
-    <feedeat-product-grid-container></feedeat-product-grid-container>
+    <div class="d-flex">
+        <div class="mr-5">
+            <feedeat-filter-card></feedeat-filter-card>
+        </div>
+        <div>
+            <search-input
+                width="700"
+                nativeClass="form-control"
+                placeholder="Cari berdasarkan nama paket, nama merchant, dll"
+            ></search-input>
+            <div class="row mt-3">
+                <div class="col-4">
+                    <div
+                        class="card meal-card {{ selectedMealFilter === 'mealbox' ? 'active' : '' }}"
+                        (click)="setSelectedMealFilter('mealbox')"
+                    >
+                        <div class="text-center">
+                            <img class="content-image" src="assets/images/pizza.png"/>
+                            <div class="card-content-text">
+                                <h5 class="mt-3">Mealbox</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div
+                        class="card meal-card {{ selectedMealFilter === 'snacks' ? 'active' : '' }}"
+                        (click)="setSelectedMealFilter('snacks')"
+                    >
+                        <div class="text-center">
+                            <img class="content-image" src="assets/images/fries.png"/>
+                            <div class="card-content-text">
+                                <h5 class="mt-3">Makanan Ringan</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div
+                        class="card meal-card {{ selectedMealFilter === 'fruits' ? 'active' : '' }}"
+                        (click)="setSelectedMealFilter('fruits')"
+                    >
+                        <div class="text-center">
+                            <img class="content-image" src="assets/images/apple.png"/>
+                            <div class="card-content-text">
+                                <h5 class="mt-3">Buah</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <feedeat-product-grid-container></feedeat-product-grid-container>
+        </div>
+    </div>
 </div>

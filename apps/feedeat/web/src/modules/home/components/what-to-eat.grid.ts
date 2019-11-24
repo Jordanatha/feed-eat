@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'feedeat-what-to-eat-grid',
@@ -6,4 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./what-to-eat.grid.scss'],
 })
-export class WhatToEatGrid {}
+export class WhatToEatGrid {
+    @Input() public isHomePage: boolean;
+}

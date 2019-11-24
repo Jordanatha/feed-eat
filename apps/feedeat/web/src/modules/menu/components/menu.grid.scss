@@ -1,0 +1,17 @@
+:host {
+    .day-text {
+        font-weight: bold !important;
+        margin-bottom: 5px !important;
+    }
+
+    .menu-image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .menu-description {
+        display: flex;
+        align-items: center;
+    }
+}

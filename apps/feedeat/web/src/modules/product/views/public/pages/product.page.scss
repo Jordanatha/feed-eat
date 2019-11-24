@@ -3,4 +3,24 @@
         margin-top: 100px;
         margin-bottom: 300px;
     }
+
+    .content-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .meal-card {
+        padding: 20px;
+        box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.06);
+
+        &.active {
+            border: 2px solid #28a745;
+        }
+    }
+
+    .card:hover {
+        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
 }

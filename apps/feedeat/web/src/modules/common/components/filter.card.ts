@@ -6,4 +6,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./filter.card.scss'],
 })
-export class FilterCard {}
+export class FilterCard {
+    public selectedSortIndex: string = 'recommendation';
+
+    public setSelectedSortIndex(target: string): void {
+        this.selectedSortIndex = target;
+    }
+}

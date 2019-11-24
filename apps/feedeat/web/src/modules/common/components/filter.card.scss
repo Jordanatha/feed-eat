@@ -13,15 +13,31 @@
         }
     }
 
-    .sorting-item {
-        display: flex;
-        align-items: center;
+    /deep/ {
+        .btn-outline-secondary {
+            &.active {
+                background-color: $success !important;
+                color: #ffffff !important;
+            }
+        }
+    }
+
+    .line {
+        width: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: black;
+        border-width: 2px;
+    }
+
+    .reset-filter {
+        font-size: 11px !important;
     }
 
     .sorting-icon {
         border: 2px solid grey;
-        padding: 5px;
-        border-radius: 30%;
+        padding: 5px 10px 5px 10px;
+        border-radius: 50%;
         font-size: 20px;
     }
 }
