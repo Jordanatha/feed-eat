@@ -1,1 +1,7 @@
-<feedeat-product-grid (detailClicked)="redirectDetail($event)" [collection]="[]"></feedeat-product-grid>
+<div class="row">
+    <ng-container *ngFor="let item of collection">
+        <div class="col-4 mb-4">
+            <feedeat-product-grid (detailClicked)="redirectDetail($event)" [products]="item"></feedeat-product-grid>
+        </div>
+    </ng-container>
+</div>

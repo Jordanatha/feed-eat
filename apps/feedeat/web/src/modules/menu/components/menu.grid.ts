@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
     selector: 'feedeat-menu-grid',
@@ -6,4 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./menu.grid.scss'],
 })
-export class MenuGrid {}
+export class MenuGrid {
+    @Input() collection: any[];
+}

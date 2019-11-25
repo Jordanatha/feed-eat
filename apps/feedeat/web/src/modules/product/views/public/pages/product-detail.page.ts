@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Data } from '@angular/router';
 
 @Component({
     selector: 'feedeat-product-detail-page',
@@ -6,4 +7,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./product-detail.page.scss'],
 })
-export class ProductDetailPage {}
+export class ProductDetailPage {
+    public quantity: number = 0;
+    public today: Date = new Date();
+
+    public modifyQuantity(operation: string): void {
+        if (operation === '+') {
+            this.quantity++;
+        } else if (operation === '-') {
+            this.quantity--;
+        }
+    }
+}

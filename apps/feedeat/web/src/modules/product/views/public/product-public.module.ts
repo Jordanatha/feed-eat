@@ -7,6 +7,8 @@ import { FeedeatProductContainerModule } from '@feedeat/web/src/modules/product/
 import { FeedeatCommonComponentModule } from '@feedeat/web/src/modules/common/components/module';
 import { SearchInputModule } from '@shared/modules/search-input/search-input.module';
 import { FeedeatMenuContainerModule } from '@feedeat/web/src/modules/menu/containers/module';
+import { FormsModule } from '@angular/forms';
+import { DatePickerModule } from '@progress/kendo-angular-dateinputs';
 
 const MODULES: any[] = [
     CommonModule,
@@ -16,6 +18,8 @@ const MODULES: any[] = [
     FeedeatCommonComponentModule,
     SearchInputModule,
     FeedeatMenuContainerModule,
+    FormsModule,
+    DatePickerModule,
 ];
 
 @NgModule({
