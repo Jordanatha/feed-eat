@@ -13,10 +13,6 @@
            routerLinkActive="active">Menu</a>
     </li>
 
-    <li class="nav-item ml-3" navItem>
-        <a class="btn nav-link" routerLink="/companies" routerLinkActive="active">Perusahaan</a>
-    </li>
-
     <ng-container *ngIf="(user$ | async) else unAuthenticatedTpl" navItem>
         <li class="nav-item ml-3" navItem>
             User
