@@ -17,7 +17,6 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { NotificatorModule } from '@shared/modules/notificator/notificator.module';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
-import { NacoModule } from '@naker/naco';
 import { EnvModule } from '@shared/modules/env/env.module';
 import { RouterRedirectorModule } from '@shared/modules/router-redirector/redirector.module';
 import { ImageAsyncModule } from '@shared/modules/image-async/image-async.module';
@@ -25,11 +24,11 @@ import { ConfirmationModule } from '@shared/modules/confirmation/confirmation.mo
 import { registerLocaleData } from '@angular/common';
 import localeId from '@angular/common/locales/id';
 import '@progress/kendo-angular-intl/locales/id/all';
-import { KbjiModule } from '@shared/modules/kbji/kbji.module';
 import { PaginationModule } from '@shared/modules/pagination/pagination.module';
 import { FEEDEAT_APP_INITIALIZER } from './app.initializer';
 import { APP_ROUTES } from './app.routes';
 import { FeedeatWebTemplateModule } from '@feedeat/web/src/templates/web/web-template.module';
+import { FeedeatApiModule } from '@feedeat/api/api.module';
 
 registerLocaleData(localeId, 'id');
 
@@ -62,9 +61,9 @@ registerLocaleData(localeId, 'id');
         RouterRedirectorModule.forRoot(),
         ImageAsyncModule.forRoot(),
         ConfirmationModule,
-        KbjiModule.forRoot(environment.endpoint),
 
-        NacoModule.forRoot({ clientId: environment.naco.clientId, scopes: 'basic email profile' }),
+        FeedeatApiModule.forRoot(environment.feedeat_api + environment.api_version),
+
         APP_ROUTES,
     ],
     providers: [

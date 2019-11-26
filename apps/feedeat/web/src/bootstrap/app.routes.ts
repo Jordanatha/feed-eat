@@ -19,6 +19,16 @@ const routes: Routes = [
             },
         ],
     },
+    {
+        path: 'auth',
+        children: [
+            {
+                path: '',
+                loadChildren: () =>
+                    import('@feedeat/web/src/modules/auth/views/landing/auth-landing.module').then(m => m.FeedeatAuthLandingModule),
+            },
+        ],
+    },
 ];
 
 export const APP_ROUTES: ModuleWithProviders = RouterModule.forRoot(routes);

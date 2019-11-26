@@ -4,10 +4,8 @@
 
 export const environment = {
     production: false,
-    endpoint: 'http://127.0.0.1:8000/v1/',
-    naco: {
-        clientId: 'b2653bc4-e8eb-46f3-ab64-32f012c3dbf1',
-    },
+    feedeat_api: 'https://dev-api.ammana.id/',
+    api_version: 'v1/',
     version: '1.0.0',
 };
 

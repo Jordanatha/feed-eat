@@ -7,10 +7,10 @@ import { ApiClientFactory } from '@feedeat/api/clients/api-client.factory';
 import { ErrorNotifierInterceptor } from '@feedeat/api/interceptors/error-notifier.interceptor';
 
 @NgModule()
-export class NinjaApiModule {
+export class FeedeatApiModule {
     public static forRoot(endpoint: string): ModuleWithProviders {
         return {
-            ngModule: NinjaApiModule,
+            ngModule: FeedeatApiModule,
             providers: [
                 {
                     provide: ApiConfig,
