@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
+import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
     selector: '[navLink]',
@@ -9,9 +9,5 @@ export class NavLinkDirective {
     @Input()
     public set isActive(active: boolean) {
         this.active = active;
-    }
-
-    public constructor(private elementRef: ElementRef) {
-        this.elementRef.nativeElement.classList.add('nav-link');
     }
 }

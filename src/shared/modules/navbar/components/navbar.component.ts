@@ -1,14 +1,15 @@
-import { ChangeDetectionStrategy, Component, Input, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, ViewChild } from '@angular/core';
 import { NavbarCollapseDirective } from '@shared/modules/navbar/directives/navbar-collapse.directive';
 import union from 'lodash-es/union';
 import xor from 'lodash-es/xor';
 import { HorizontalAlignment } from '@shared/enums/alignment';
+import { NavbarTogglerDirective } from '@shared/modules/navbar/directives/navbar-toggler.directive';
 
 @Component({
     selector: 'navbar',
     template: `
         <nav [id]="id" [ngClass]="classes" navbar>
-            <div class="container">
+            <div class="container-fluid">
                 <ng-content select=".navbar-brand"></ng-content>
                 <button type="button"
                         (toggleNav)="onToggleNav()"
@@ -20,9 +21,8 @@ import { HorizontalAlignment } from '@shared/enums/alignment';
                     </span>
                 </button>
                 <div id="navbar-collapse" navbarCollapse>
-                    <naker-nav navClasses="navbar-nav" [hAlign]="HorizontalAlignment.RIGHT">
-                        <ng-content select="[navItem], kemnaker-dropdown"></ng-content>
-                    </naker-nav>
+                    <ng-content select=".menu-navbar"></ng-content>
+                    <ng-content select=".control-navbar"></ng-content>
                 </div>
             </div>
         </nav>
@@ -36,13 +36,23 @@ export class NavbarComponent {
     }
     @Input() public id: string = '';
 
-    @ViewChildren(NavbarCollapseDirective) private navbarCollapse: NavbarCollapseDirective;
+    @ViewChild(NavbarCollapseDirective, { static: false })
+    private navbarCollapse: NavbarCollapseDirective;
+    @ViewChild(NavbarTogglerDirective, { static: false })
+    private navbarToggler: NavbarTogglerDirective;
 
     public classes: string[] = ['navbar', 'navbar-expand-lg'];
     public HorizontalAlignment: any = HorizontalAlignment;
 
+    public constructor(private cdRef: ChangeDetectorRef) {}
+
     public onToggleNav(): void {
         this.classes = xor(this.classes, ['expanded']);
         this.navbarCollapse.toggleCollapse();
+        const find = this.classes.find(item => item === 'expanded');
+        if (!find) {
+            this.navbarToggler.toggleCollapse();
+        }
+        this.cdRef.markForCheck();
     }
 }

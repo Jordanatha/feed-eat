@@ -1,0 +1,75 @@
+<form [formGroup]="form.formGroup" (ngSubmit)="submit()" class="login100-form validate-form" novalidate>
+    <div class="w-100">
+        <div class="form-group">
+            <label>Email</label>
+            <div class="wrap-input100 validate-input">
+                <input class="input100" type="text" formControlName="email">
+                <span class="focus-input100"></span>
+            </div>
+            <ubud-form-error [control]="form.formGroup.get('email')" [rules]="form.rules"></ubud-form-error>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <div class="wrap-input100 validate-input">
+                <input class="input100" type="password" formControlName="password">
+                <span class="focus-input100"></span>
+            </div>
+            <ubud-form-error [control]="form.formGroup.get('password')" [rules]="form.rules"></ubud-form-error>
+        </div>
+
+        <div class="form-group">
+            <label>Ketik Ulang Password</label>
+            <div class="wrap-input100 validate-input">
+                <input class="input100" type="password" formControlName="passwordConfirmation">
+                <span class="focus-input100"></span>
+            </div>
+            <ubud-form-error [control]="form.formGroup.get('passwordConfirmation')" [rules]="form.rules"></ubud-form-error>
+        </div>
+
+        <div class="form-group">
+            <label>Nama</label>
+            <div class="wrap-input100 validate-input">
+                <div class="d-flex align-items-center">
+                    <input class="input100 mr-2" type="text" formControlName="firstName">
+                    <input class="input100" type="text" formControlName="lastName">
+                </div>
+                <span class="focus-input100"></span>
+            </div>
+            <ubud-form-error [control]="form.formGroup.get('firstName')" [rules]="form.rules"></ubud-form-error>
+        </div>
+
+        <div class="form-group">
+            <label>Alamat</label>
+            <div class="wrap-input100 validate-input">
+                <textarea kendoTextArea formControlName="address" [autoSize]="false" class="form-control w-100"></textarea>
+                <span class="focus-input100"></span>
+            </div>
+            <ubud-form-error [control]="form.formGroup.get('address')" [rules]="form.rules"></ubud-form-error>
+        </div>
+
+        <div class="form-group">
+            <label>Tanggal Lahir</label>
+            <div class="wrap-input100 validate-input">
+                <kendo-datepicker class="form-control" formControlName="bod"></kendo-datepicker>
+                <span class="focus-input100"></span>
+            </div>
+            <ubud-form-error [control]="form.formGroup.get('bod')" [rules]="form.rules"></ubud-form-error>
+        </div>
+
+        <div class="form-group">
+            <label>Nomor Handphone</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="btn-group form-control border-radius-5">
+                        +62
+                    </div>
+                </div>
+                <input type="number" class="form-control" formControlName="phone" />
+            </div>
+            <ubud-form-error [control]="form.formGroup.get('phone')" [rules]="form.rules"></ubud-form-error>
+        </div>
+
+        <ng-content></ng-content>
+    </div>
+</form>

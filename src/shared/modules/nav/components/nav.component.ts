@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HorizontalAlignment, VerticalAlignment } from '@shared/enums/alignment';
 
 @Component({
-    selector: 'naker-nav',
+    selector: 'feedeat-nav',
     template: `
         <div [id]="id" [ngClass]="classes">
             <ng-content></ng-content>

@@ -15,6 +15,10 @@ export class NavbarTogglerDirective {
         this.toggleNav.emit();
     }
 
+    public toggleCollapse(): void {
+        this.collapsed = true;
+    }
+
     public constructor(private elementRef: ElementRef) {
         this.elementRef.nativeElement.className = 'navbar-toggler';
     }
