@@ -9,11 +9,17 @@
                     #formTpl
                     [form]="registerForm"
                     (valueChanges)="readyForSubmit = 'VALID' === $event.status"
+                    (submitted)="register($event)"
                 >
                     <div class="login100-form validate-form">
                         <div class="container-login100-form-btn">
-                            <button class="btn btn-success w-100" [disabled]="formTpl.form.formGroup.status !== 'VALID'">
-                                Login
+                            <button (click)="formTpl.submit()" class="btn btn-success w-100" [disabled]="!readyForSubmit || (submitting$ | async)">
+                                <ng-container *ngIf="submitting$ | async; else noLoadingTpl">
+                                    <ubud-loader-component></ubud-loader-component>
+                                </ng-container>
+                                <ng-template #noLoadingTpl>
+                                    Daftar
+                                </ng-template>
                             </button>
                         </div>
                     </div>

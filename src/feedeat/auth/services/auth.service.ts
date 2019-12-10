@@ -9,6 +9,7 @@ import { AuthStore } from '@feedeat/auth/stores/auth.store';
 import { Credential } from '@feedeat/auth/dtos/credential';
 import { Signature } from '@feedeat/auth/values/signature';
 import { User } from '@feedeat/auth/models/user';
+import { UserDto } from '@feedeat/auth/dtos/user';
 
 @Injectable()
 export class AuthService {
@@ -20,6 +21,7 @@ export class AuthService {
 
         return this.client.authenticate(credential).pipe(
             tap((signature: Signature) => {
+                console.log(signature);
                 this.storage.set(Signature.STORAGE_KEY, signature);
                 this.store.setManagementLoading(false);
                 this.store.setSignature(signature);
@@ -38,6 +40,7 @@ export class AuthService {
     public getAuthenticatedUser(): Observable<User | null> {
         return from(this.storage.get(Signature.STORAGE_KEY)).pipe(
             switchMap((signature: Signature) => {
+                console.log(signature);
                 if (!signature || null === signature.expiresIn) {
                     return this.resetUser();
                 }
@@ -49,6 +52,24 @@ export class AuthService {
                     }),
                     catchError((e: HttpErrorResponse) => {
                         return this.resetUser();
+                    }),
+                );
+            }),
+        );
+    }
+
+    public registerCustomer(payload: UserDto): Observable<any> {
+        this.store.setManagementLoading(true);
+        this.store.setManagementErrorMessage('');
+
+        return this.client.registerCustomer(payload).pipe(
+            tap(() => {
+                this.store.setManagementLoading(false);
+            }),
+            catchError((e: HttpErrorResponse) => {
+                return of(HttpUtil.errorExtractor(e)).pipe(
+                    tap(() => {
+                        this.store.setManagementLoading(false);
                     }),
                 );
             }),

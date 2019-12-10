@@ -199,6 +199,10 @@
             }
         }
 
+        .user-name:hover {
+            cursor: unset;
+        }
+
         .logo {
             position: static;
             padding: 0;

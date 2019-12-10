@@ -14,9 +14,9 @@
                routerLinkActive="active" navToggler (onClicked)="toggleNavbar()">Menu</a>
         </li>
 
-        <ng-container *ngIf="(user$ | async); let user; else unAuthenticatedTpl" navItem>
-            <li class="nav-item ml-3" navItem>
-                <p navToggler (onClicked)="toggleNavbar()">User</p>
+        <ng-container *ngIf="(user$ | async); let user; else unAuthenticatedTpl">
+            <li class="btn nav-link nav-item ml-3" navItem>
+                <a navToggler (onClicked)="toggleNavbar()">Halo, {{(user$ | async).name}}</a>
             </li>
         </ng-container>
 

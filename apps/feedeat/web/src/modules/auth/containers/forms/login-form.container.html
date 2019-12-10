@@ -9,7 +9,10 @@
                 <div class="login100-form validate-form">
                     <div class="container-login100-form-btn">
                         <button class="login100-form-btn" (click)="loginForm.submit()" [disabled]="!form.formGroup.valid || (loading$ | async)">
-                            Login
+                            <ng-container *ngIf="loading$ | async; else noLoadingTpl">
+                                <ubud-loader-component></ubud-loader-component>
+                            </ng-container>
+                            <ng-template #noLoadingTpl>Login</ng-template>
                         </button>
                     </div>
 

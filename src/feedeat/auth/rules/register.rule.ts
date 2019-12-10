@@ -22,7 +22,7 @@ export class RegisterRule extends Rule {
             lastName: {
                 required: (params: any) => 'Nama Akhir harus diisi',
             },
-            bod: {
+            birthDate: {
                 required: (params: any) => 'Tanggal lahir harus diisi',
             },
             address: {
@@ -54,7 +54,7 @@ export class RegisterRule extends Rule {
         return [Validators.required];
     }
 
-    public get bod(): Function[] {
+    public get birthDate(): Function[] {
         return [Validators.required];
     }
 
@@ -73,7 +73,7 @@ export class RegisterRule extends Rule {
             passwordConfirmation: ['', this.passwordConfirmation],
             firstName: ['', this.firstName],
             lastName: ['', this.lastName],
-            bod: ['', this.bod],
+            birthDate: ['', this.birthDate],
             address: ['', this.address],
             phone: ['', this.phone],
         };

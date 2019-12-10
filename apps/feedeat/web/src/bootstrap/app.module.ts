@@ -29,6 +29,7 @@ import { FEEDEAT_APP_INITIALIZER } from './app.initializer';
 import { APP_ROUTES } from './app.routes';
 import { FeedeatWebTemplateModule } from '@feedeat/web/src/templates/web/web-template.module';
 import { FeedeatApiModule } from '@feedeat/api/api.module';
+import { FeedeatAuthDomainModule } from '@feedeat/auth/auth.module';
 
 registerLocaleData(localeId, 'id');
 
@@ -61,6 +62,7 @@ registerLocaleData(localeId, 'id');
         RouterRedirectorModule.forRoot(),
         ImageAsyncModule.forRoot(),
         ConfirmationModule,
+        FeedeatAuthDomainModule,
 
         FeedeatApiModule.forRoot(environment.feedeat_api + environment.api_version),
 

@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    feedeat_api: 'https://dev-api.ammana.id/',
+    feedeat_api: 'https://dev-api.feedeat.id/',
     api_version: 'v1/',
     version: '1.0.0',
 };

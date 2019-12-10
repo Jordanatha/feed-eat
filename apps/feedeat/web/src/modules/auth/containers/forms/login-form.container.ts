@@ -8,6 +8,7 @@ import { LoginFormFactory } from '@feedeat/auth/factories/login-form.factory';
 import { AuthService } from '@feedeat/auth/services/auth.service';
 import { AuthRepository } from '@feedeat/auth/repositories/auth.repository';
 import { Credential } from '@feedeat/auth/dtos/credential';
+import { Signature } from '@feedeat/auth/values/signature';
 
 @Component({
     selector: 'feedeat-login-container',
@@ -39,8 +40,10 @@ export class LoginFormContainer implements OnDestroy {
             this.subscriber.subscribe(
                 this,
                 this.service.authenticate(payload.data).pipe(
-                    tap(() => {
-                        this.router.navigate(['/']);
+                    tap((response: any) => {
+                        if (response instanceof Signature) {
+                            this.router.navigate(['/']);
+                        }
                     }),
                 ),
             );
