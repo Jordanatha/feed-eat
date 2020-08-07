@@ -72,7 +72,7 @@
         "@ubud/user-control": "^2.0.0",
         "@ubud/utilities": "^2.0.0",
         "angular-slick-carousel": "^3.1.7",
-        "class-transformer": "^0.1.9",
+        "class-transformer": "^0.3.1",
         "core-js": "^2.5.4",
         "jquery": "^3.4.1",
         "lodash-es": "^4.17.10",
